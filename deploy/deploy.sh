@@ -12,6 +12,7 @@ DEST_DIR="/var/www/casacactusbuenavista.com/public"
 NGINX_SRC="$DEPLOY_DIR/nginx.conf"
 NGINX_DEST="/etc/nginx/sites-available/www.casacactusbuenavista.com"
 SITE_URL="https://www.casacactusbuenavista.com"
+GALLERY_BIN="$DEPLOY_DIR/bin/build-gallery"
 
 echo ""
 echo "  ╔═══════════════════════════════════════╗"
@@ -19,14 +20,25 @@ echo "  ║  🚀 DEPLOY — casacactusbuenavista.com"
 echo "  ╚═══════════════════════════════════════╝"
 echo ""
 
+# Build the gallery from whatever is currently in public/images/
+echo "> BUILDING GALLERY..."
+if [ -x "$GALLERY_BIN" ]; then
+    "$GALLERY_BIN" -dir "$SRC_DIR/images" -html "$SRC_DIR/gallery.html" \
+        | sed 's/^/  [🖼] /'
+else
+    echo "  [✗] $GALLERY_BIN not found or not executable" >&2
+    exit 1
+fi
+
 # Sync public/ → /var/www/
+echo ""
 echo "> SYNCING FILES..."
 rsync -av --checksum --delete \
     --exclude='sitemap.xml' \
     --out-format="  [↑] %n" \
     "$SRC_DIR"/ "$DEST_DIR"/
 
-# Generate sitemap
+# Generate sitemap (one <url> per page; clean, extensionless URLs)
 echo ""
 echo "> GENERATING SITEMAP..."
 LASTMOD=$(date +%Y-%m-%d)
