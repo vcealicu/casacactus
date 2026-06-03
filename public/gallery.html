@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Gallery — Casa Cactus Buenavista</title>
+  <meta name="description" content="A gallery of Casa Cactus Buenavista — the pool, gardens, rooms and quiet corners of our guesthouse near Laguna de Bacalar."/>
+  <link rel="canonical" href="https://www.casacactusbuenavista.com/gallery.html"/>
+  <meta property="og:title" content="Gallery — Casa Cactus Buenavista"/>
+  <meta property="og:description" content="The pool, gardens, rooms and quiet corners of Casa Cactus Buenavista."/>
+  <meta property="og:image" content="https://www.casacactusbuenavista.com/images/aerial-pool-freeform-spa-steps-couple-overhead.webp"/>
+  <meta property="og:url" content="https://www.casacactusbuenavista.com/gallery.html"/>
+  <meta name="robots" content="index,follow"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=optional" rel="stylesheet"/>
+  <style>
+    :root{
+      --ink:#1a1a17;--cream:#f6f1e8;--cream-dark:#ede6d6;
+      --terracotta:#c06b47;--sage:#5e8a65;--lagoon:#3a8f84;
+      --lagoon-lt:#6ab8b0;--gold:#c8a55e;--muted:#8a877f;--white:#fdfaf5;
+      --fd:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+      --fb:"Jost","Helvetica Neue",Arial,sans-serif;
+      --es:cubic-bezier(.25,.46,.45,.94);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--ink);font-family:var(--fb);font-weight:300;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1320px;margin:0 auto;padding:0 1.8rem}
+
+    /* header */
+    header{position:sticky;top:0;z-index:50;background:rgba(246,241,232,.86);backdrop-filter:blur(12px);border-bottom:1px solid rgba(26,26,23,.07)}
+    .bar{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.8rem;max-width:1320px;margin:0 auto}
+    .logo{font-family:var(--fd);font-size:1.5rem;letter-spacing:.02em}
+    .back{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:.5rem;transition:color .3s var(--es)}
+    .back:hover{color:var(--terracotta)}
+    .back svg{width:15px;height:15px}
+
+    /* intro */
+    .intro{text-align:center;padding:4.5rem 1.8rem 2.6rem}
+    .eyebrow{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.1rem}
+    .intro h1{font-family:var(--fd);font-weight:300;font-size:clamp(2.8rem,7vw,5rem);line-height:1.02;letter-spacing:-.01em}
+    .intro p{max-width:540px;margin:1.4rem auto 0;color:var(--muted);font-size:1rem;line-height:1.7}
+
+    /* masonry via columns */
+    .grid{columns:4;column-gap:14px;padding:0 0 5rem}
+    .g-item{break-inside:avoid;margin:0 0 14px;border-radius:3px;overflow:hidden;background:var(--cream-dark);cursor:zoom-in;position:relative;display:block}
+    .g-item img{width:100%;height:auto;display:block;transition:transform .7s var(--es),opacity .6s var(--es);opacity:0}
+    .g-item img.loaded{opacity:1}
+    .g-item:hover img{transform:scale(1.04)}
+    .g-item::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,16,12,.18),transparent 45%);opacity:0;transition:opacity .4s var(--es)}
+    .g-item:hover::after{opacity:1}
+
+    @media(max-width:1100px){.grid{columns:3}}
+    @media(max-width:760px){.grid{columns:2;column-gap:10px}.g-item{margin-bottom:10px}.wrap{padding:0 1.1rem}.intro{padding:3.2rem 1.1rem 2rem}}
+    @media(max-width:430px){.grid{columns:1}}
+
+    /* lightbox */
+    .lb{position:fixed;inset:0;z-index:100;background:rgba(12,12,10,.94);display:none;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out}
+    .lb.open{display:flex}
+    .lb img{max-width:100%;max-height:90vh;border-radius:3px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+    .lb-close{position:absolute;top:1.4rem;right:1.6rem;color:var(--cream);background:none;border:none;cursor:pointer;padding:.4rem}
+    .lb-close svg{width:30px;height:30px}
+    .lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:var(--cream);background:none;border:none;cursor:pointer;padding:1rem;opacity:.7;transition:opacity .3s var(--es)}
+    .lb-nav:hover{opacity:1}
+    .lb-nav svg{width:34px;height:34px}
+    .lb-prev{left:.6rem}.lb-next{right:.6rem}
+    .lb-cap{position:absolute;bottom:1.4rem;left:0;right:0;text-align:center;color:rgba(246,241,232,.7);font-size:.72rem;letter-spacing:.12em;text-transform:capitalize}
+
+    footer{text-align:center;padding:3rem 1.8rem 4rem;border-top:1px solid rgba(26,26,23,.07);color:var(--muted)}
+    footer .fl{font-family:var(--fd);font-size:1.6rem;color:var(--ink);margin-bottom:.6rem}
+    footer a{color:var(--terracotta)}
+    footer .small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;margin-top:.4rem}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="bar">
+      <a href="index.html" class="logo">Casa Cactus</a>
+      <a href="index.html" class="back" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+        Back
+      </a>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="eyebrow">Casa Cactus Buenavista</div>
+    <h1>The Gallery</h1>
+    <p>The pool at dusk, the gardens, the quiet corners. A look around the place, one frame at a time.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <div class="lb" id="lb">
+    <button class="lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <img id="lbImg" src="" alt=""/>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18l6-6-6-6"/></svg></button>
+    <div class="lb-cap" id="lbCap"></div>
+  </div>
+
+  <footer>
+    <div class="fl">Casa Cactus</div>
+    <div>Buenavista, near Laguna de Bacalar &middot; <a href="index.html">Home</a></div>
+    <div class="small">Open since 2024</div>
+  </footer>
+
+  <script>
+    // ── @IMAGES_START ──────────────────────────────────────────────────────
+    // Auto-generated from /home/coder/casacactusbuenavista/public/images by deploy/cmd/build-gallery. Do not hand-edit;
+    // run `go run ./deploy/cmd/build-gallery` from the repo root to refresh.
+    var IMAGES = [
+      "aerial-buenavista-laguna-wider-angle",
+      "aerial-buenavista-village-lagoon-pin",
+      "aerial-buenavista-village-lagoon-pin-wider",
+      "aerial-buenavista-village-laguna-no-pin",
+      "aerial-pool-freeform-spa-couple-overhead-vertical",
+      "aerial-pool-freeform-spa-steps-couple-overhead",
+      "aerial-pool-full-view-garden",
+      "aerial-pool-garden-overhead-woman-floating",
+      "aerial-pool-steps-woman-sitting",
+      "aerial-property-overview-pool-palapa-gardens-overhead",
+      "apartment-balcony-corridor-wicker-pendants-potted-palm-golden",
+      "apartment-bathroom-barn-door-sink-round-mirror-towels",
+      "apartment-bathroom-sliding-barn-door-concrete-sink",
+      "apartment-bedroom-blue-bed-parrot-painting-balcony-hammock",
+      "apartment-bedroom-yellow-accents-barn-door-ceiling-fan",
+      "apartment-bedroom-yellow-barn-door-ceiling-fan-window",
+      "apartment-bedroom-yellow-closet-ceiling-fan-balcony",
+      "apartment-bedroom-yellow-closet-side-view-balcony",
+      "apartment-bedroom-yellow-pillows-sliding-barn-door",
+      "apartment-hallway-kitchen-to-bedroom-balcony",
+      "apartment-kitchen-cabinet-open-dishes-pots-glassware",
+      "apartment-kitchen-corridor-wicker-pendant-garden",
+      "apartment-kitchen-drawer-red-silicone-utensils",
+      "apartment-kitchen-drawer-wooden-knives-cutlery",
+      "apartment-kitchen-induction-hob-coffee-maker-counter",
+      "apartment-kitchen-red-hisense-fridge-coffee-maker-cabinets",
+      "apartment-kitchen-shelf-bowls-plates-pans",
+      "apartment-living-area-ceiling-fan-desk-open-balcony",
+      "apartment-living-area-desk-wicker-pendant-balcony-golden-light",
+      "apartment-living-blue-sofa-parrot-painting-open-bedroom",
+      "apartment-studio-blue-bed-balcony-hammock-open-garden",
+      "apartment-studio-blue-bed-ceiling-fan-open-balcony",
+      "apartment-studio-blue-bed-parrot-kitchenette-bathroom",
+      "apartment-studio-blue-bed-parrot-painting-ceiling-fan",
+      "apartment-studio-blue-bed-work-desk-balcony-hammock-wide",
+      "apartment-studio-blue-sofa-work-desk-hammock-balcony",
+      "apartment-studio-parrot-painting-blue-sofa-red-fridge",
+      "apartment-studio-parrot-painting-red-fridge-kitchenette-wide",
+      "apartment-work-desk-concrete-wicker-pendant-slit-window",
+      "apartments-exterior-stone-staircase-cactus-row-palms-dusk",
+      "apartments-stone-staircase-cactus-row-flagstone",
+      "bathroom-amenities-shampoo-conditioner-stone-wall",
+      "bathroom-carved-stone-sink-round-mirror-chrome-faucet",
+      "bathroom-concrete-sink-oval-mirror-room-reflection",
+      "bathroom-golden-amber-carved-stone-sink-round-mirror",
+      "bathroom-petrified-stone-vessel-sink-chrome-faucet-round-mirror",
+      "bathroom-round-mirror-amber-stone-sink-chrome-wallfaucet",
+      "bathroom-shower-head-chrome-close-up",
+      "bathroom-stone-wall-round-mirror-carved-rock-sink-wide",
+      "bathroom-stone-wall-toilet-carved-sink-wide",
+      "bedroom-king-cane-headboard-stone-wall-wicker-pendants",
+      "bedroom-stone-wall-cane-headboard-wicker-pendant-yellow-pillows-vertical",
+      "breakfast-fruit-plate-dragonfruit-grapes-apple-mug-detail",
+      "bungalow-1-terrace-through-vines-hammock-number-sign",
+      "bungalow-bathroom-glass-shower-stone-wall-stool",
+      "bungalow-bathroom-open-shower-stone-wall-towels",
+      "bungalow-bedroom-baby-cot-close-up-wicker-pendant",
+      "bungalow-bedroom-baby-cot-garden-window",
+      "bungalow-bedroom-double-bed-yellow-accents-towels-folded",
+      "bungalow-bedroom-stone-wall-bed-bathroom-visible",
+      "bungalow-bedroom-stone-wall-double-bed-wicker-pendants",
+      "bungalow-bedroom-stone-wall-double-bed-yellow-accents-wide",
+      "bungalow-bedroom-stone-wall-pendant-lights-bench-frontal",
+      "bungalow-bedroom-stone-wall-yellow-pillows-bathroom-door",
+      "bungalow-bedroom-twin-beds-baby-cot-highchair",
+      "bungalow-bedroom-twin-beds-blue-pillows-sailboat-painting",
+      "bungalow-bedroom-twin-beds-frontal-wicker-pendants",
+      "bungalow-bedroom-twin-beds-garden-window-banana-leaves",
+      "bungalow-bedroom-twin-beds-sailboat-painting-wicker-pendants",
+      "bungalow-bedroom-two-garden-windows-terrace-door",
+      "bungalow-exterior-palapa-roof-hammock-jungle",
+      "bungalow-hammock-stone-wall-dappled-light-detail",
+      "bungalow-room-mini-fridge-wooden-cabinet-mirror-crochet",
+      "bungalow-room-round-table-red-ginger-window-closet",
+      "bungalow-room-round-table-two-chairs-garden-window-ac",
+      "bungalow-room-wardrobe-sitting-table-garden-window",
+      "bungalow-room-wide-bed-table-chairs-shelving-fridge",
+      "bungalow-terrace-hammock-maroon-woven-chairs-palapa",
+      "bungalow-terrace-hammock-single-chair-side-table-palapa",
+      "bungalow-terrace-lounge-chairs-hammock-palapa",
+      "bungalow-terrace-palapa-hammock-equipal-chairs-wicker-lit",
+      "bungalow-terrace-woman-hammock-red-wine-portrait",
+      "cactus-columnar-pink-fruit-mosaic-stone-wall-vertical",
+      "cactus-extreme-closeup-pink-fruit-spine-detail",
+      "cactus-top-pink-fruit-mosaic-wall-upward",
+      "chiku-casa-de-chiku-wooden-sign-line-drawing",
+      "chiku-tabby-cat-sun-lounger-portrait",
+      "chiku-tabby-cat-sun-lounger-wide",
+      "dinner-food-fried-parcels-chutney-black-plates-detail",
+      "dinner-palapa-bar-pink-oleander-string-lights-dusk",
+      "dinner-pool-aerial-palapa-table-palm-overhead",
+      "dinner-pool-evening-guests-pouring-wine-candid",
+      "dinner-pool-group-table-host-standing-dusk",
+      "dinner-pool-guests-eating-candid-banana-plants",
+      "dinner-pool-guests-musician-this-must-be-the-place-dusk",
+      "dinner-pool-guests-table-casa-cactus-sign",
+      "dinner-pool-palapa-string-lights-reflection-wide-evening",
+      "dinner-poolside-pouring-rose-wine-glass-detail",
+      "dinner-table-setting-flowers-sage-runner-candlestick-detail",
+      "entrance-sign-doorbell-wooden-white-wall",
+      "entrance-sign-wooden-doorbell-white-wall-shadow",
+      "founders-jey-and-sebastian-smiling-portrait-best",
+      "founders-sebastian-and-jey-portrait-cactus-mosaic-wall",
+      "garden-banana-bunch-close-up-blue-sky",
+      "garden-banana-tree-green-bunch-upward-blue-sky",
+      "garden-bird-yellow-breast-tree-branch",
+      "garden-cactus-row-five-white-wall-stone-border",
+      "garden-cactus-row-mosaic-wall-path-banana-palms",
+      "garden-cactus-top-down-gravel-detail",
+      "garden-chili-pepper-bush-red-chilies-palapa",
+      "garden-chili-pepper-closeup-red-green",
+      "garden-dark-palm-fronds-jungle",
+      "garden-fire-pit-stone-wall-benches-palms",
+      "garden-fire-pit-wood-oven-log-pile-shade-sail-chairs",
+      "garden-heliconia-lobster-claw-red-yellow-path",
+      "garden-large-leaf-texture-close-up",
+      "garden-path-curved-pool-string-lights-loungers-red-ginger",
+      "garden-path-curved-pool-string-lights-wider",
+      "garden-path-woman-white-dress-string-lights",
+      "garden-path-woman-white-dress-walking-lifestyle",
+      "garden-path-woman-white-dress-wider-apartment",
+      "garden-red-ginger-flowers-tropical",
+      "garden-stone-wall-pink-coral-vine-gate-palms",
+      "garden-sun-loungers-dappled-shade-palms",
+      "garden-sunset-through-trees-golden",
+      "garden-swing-tree-casa-cactus-sign-palms",
+      "garden-tree-swing-blue-rope-monstera-palapa-terrace",
+      "garden-trees-canopy-blue-sky",
+      "garden-white-oleander-blossoms-pool-bokeh-detail",
+      "garden-white-oleander-sunflare-bungalow-golden-light",
+      "hero-garden-swing-pool-reflection-woman-yellow-dress",
+      "lagoon-sailboat-green-jungle-banks-aerial",
+      "lagoon-sailboat-open-water-aerial",
+      "lifestyle-reading-book-lime-drink-garden-pool-behind",
+      "lifestyle-reading-book-poolside-lime-drink-overhead",
+      "mari-poolside-reading-feet-in-water-palm-stone-wall",
+      "mari-portrait-sun-lounger-book-lime-drink-bungalow",
+      "mimish-white-cat-sleeping-garden",
+      "mimish-white-cat-squinting-garden",
+      "music-poolside-singer-microphone-fairy-lights-dusk",
+      "music-trio-poolside-wicker-pendant-lights",
+      "music-trio-tabla-harmonium-guitar-poolside",
+      "palapa-bar-counter-wicker-pendants-outdoor-sink",
+      "palapa-dining-wicker-pendants-stone-wall-fire-pit",
+      "pool-aerial-freeform-shape-terrace-overhead",
+      "pool-aerial-loungers-garden-palms-steps",
+      "pool-area-outdoor-wc-sink-rattan-mirror-wooden-door",
+      "pool-area-wc-door-garden-foliage-pink-flowers",
+      "pool-curved-steps-palm-tree-lush-garden-ground",
+      "pool-drone-overhead-freeform-shape-steps-clean",
+      "pool-elevated-freeform-wider-from-balcony",
+      "pool-elevated-palapa-dining-from-balcony",
+      "pool-evening-red-underwater-lights-dinner-banana-leaves",
+      "pool-palapa-bar-kitchen-string-lights-dusk-vertical",
+      "pool-palapa-bar-string-lights-green-light-dusk-vertical",
+      "pool-palapa-dining-terrace-freeform-garden-wide",
+      "pool-palapa-dining-woman-blue-dress-garden-elevated",
+      "pool-reflections-palm-shadows",
+      "pool-spa-couple-loungers-fruit-elevated",
+      "pool-spa-guests-wine-round-table-elevated",
+      "pool-under-tree-palapa-dining-terrace-garden",
+      "pool-view-from-terrace-hammock-railing-palapa",
+      "pool-welcome-fruit-board-cucumber-water-glass-detail",
+      "property-back-entrance-stone-wall-coconut-palm-vines",
+      "property-entrance-casa-cactus-sign-lamp-cacti-pots-dusk-vertical",
+      "property-entrance-casa-cactus-sign-palms-dusk",
+      "property-entrance-casa-cactus-sign-stone-wall-lamp-cacti-dusk",
+      "property-entrance-casa-cactus-sign-sunflare-vertical",
+      "property-entrance-casa-cactus-terracotta-sign-stone-wall",
+      "property-entrance-sign-doorbell-cactus-tile",
+      "property-exterior-cactus-staircase-mosaic-wall",
+      "property-exterior-gate-closed-stone-wall-cactus-agave",
+      "property-exterior-street-view-gate-open-cactus",
+      "property-exterior-wider-gate-trees-street-approach",
+      "property-exterior-woman-staircase-cactus-mosaic-wall",
+      "property-parking-sign-painted-wood-turquoise-banana",
+      "property-sign-this-must-be-the-place-casa-cactus",
+      "room-baby-highchair-family-friendly-amenity",
+      "room-desk-nook-wicker-pendant-wood-chair-garden-view",
+      "room-detail-alarm-clock-crochet-cactus-wifi-desk",
+      "room-detail-crochet-cactus-alarm-clock-floor-window",
+      "room-detail-red-ginger-fern-green-vase-window",
+      "room-detail-red-heliconia-green-vase-table",
+      "room-sitting-area-round-table-blue-chairs-banana-window",
+      "room-sitting-table-crochet-cactus-detail-garden-window",
+      "room-sitting-table-two-chairs-garden-window-sunlight",
+      "room-wicker-pendant-lamp-warm-light-close-up",
+      "stone-wall-bungalow-king-bed-frontal-wicker-pendants",
+      "stone-wall-bungalow-private-terrace-hammock-equipal-chairs",
+      "tortilla-workshop-mari-sebastian-pressing-masa-pool",
+      "tortilla-workshop-mari-sebastian-stove-cooking",
+      "village-buenavista-street-cocacola-wall"
+    ];
+    // ── @IMAGES_END ──────────────────────────────────────────────────────
+    var BASE = "/images/";
+    var grid = document.getElementById("grid");
+    var live = []; // images that actually loaded, for lightbox order
+
+    IMAGES.forEach(function(name){
+      var a = document.createElement("a");
+      a.className = "g-item";
+      a.href = BASE + name + ".webp";
+      var img = document.createElement("img");
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.src = BASE + name + ".webp";
+      img.alt = name.replace(/-/g," ");
+      img.addEventListener("load", function(){ img.classList.add("loaded"); });
+      // if a file isn't on the server yet, quietly remove its tile
+      img.addEventListener("error", function(){ a.remove(); });
+      a.addEventListener("click", function(e){
+        e.preventDefault();
+        openLb(a.href, img.alt);
+      });
+      a.appendChild(img);
+      grid.appendChild(a);
+    });
+
+    // Lightbox
+    var lb = document.getElementById("lb"),
+        lbImg = document.getElementById("lbImg"),
+        lbCap = document.getElementById("lbCap");
+    function currentTiles(){ return Array.prototype.slice.call(grid.querySelectorAll(".g-item")); }
+    function openLb(src, cap){
+      lbImg.src = src; lbImg.alt = cap; lbCap.textContent = cap;
+      lb.classList.add("open"); document.body.style.overflow = "hidden";
+    }
+    function closeLb(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
+    function step(dir){
+      var tiles = currentTiles();
+      var srcs = tiles.map(function(t){ return t.getAttribute("href"); });
+      var i = srcs.indexOf(lbImg.getAttribute("src"));
+      if(i === -1) return;
+      var n = (i + dir + srcs.length) % srcs.length;
+      var alt = tiles[n].querySelector("img").alt;
+      openLb(srcs[n], alt);
+    }
+    document.getElementById("lbClose").addEventListener("click", function(e){e.stopPropagation();closeLb();});
+    document.getElementById("lbPrev").addEventListener("click", function(e){e.stopPropagation();step(-1);});
+    document.getElementById("lbNext").addEventListener("click", function(e){e.stopPropagation();step(1);});
+    lb.addEventListener("click", closeLb);
+    lbImg.addEventListener("click", function(e){ e.stopPropagation(); });
+    document.addEventListener("keydown", function(e){
+      if(!lb.classList.contains("open")) return;
+      if(e.key === "Escape") closeLb();
+      else if(e.key === "ArrowLeft") step(-1);
+      else if(e.key === "ArrowRight") step(1);
+    });
+  </script>
+</body>
+</html>
