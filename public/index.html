@@ -184,10 +184,11 @@
     .rooms{background:var(--cream)}
     .rooms-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;gap:3rem;flex-wrap:wrap}
     .rooms-tabs{display:flex;gap:.5rem;margin-bottom:3rem}
-    .tab-btn{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid var(--cream-dark);color:var(--muted);padding:.7rem 1.6rem;border-radius:100px;cursor:pointer;transition:background .35s,color .35s,border-color .35s}
+    .tab-btn{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;background:none;border:1px solid var(--cream-dark);color:var(--muted);padding:.7rem 1.6rem;border-radius:100px;cursor:pointer;transition:background .35s,color .35s,border-color .35s,transform .35s var(--es),box-shadow .35s var(--es)}
     .tab-btn.active,.tab-btn:hover{background:var(--ink);border-color:var(--ink);color:var(--white)}
+    .tab-btn.active{transform:translateY(-1px);box-shadow:0 4px 14px rgba(26,26,23,.18)}
     .tab-panel{display:none}
-    .tab-panel.active{display:block}
+    .tab-panel.active{display:block;animation:tabIn .45s var(--es)}
     .room-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:4px;border-radius:4px;overflow:hidden;height:580px}
     .room-main{position:relative;overflow:hidden;height:580px}
     .room-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -221,10 +222,10 @@
     .sailing-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,rgba(8,18,24,.78) 0%,rgba(8,18,24,.28) 65%,transparent 100%)}
     .sailing-body{position:relative;z-index:2;height:100%;display:flex;align-items:flex-end;padding:5rem 6rem}
     .sailing-txt{max-width:480px}
-    .sailing-txt .label{color:var(--lagoon-lt)}
-    .sailing-h{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;color:var(--white);line-height:1.04;margin-bottom:1.4rem}
+    .sailing-txt .label{color:var(--lagoon-lt);text-shadow:0 1px 10px rgba(0,0,0,.55)}
+    .sailing-h{font-family:var(--fd);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:300;color:var(--white);line-height:1.04;margin-bottom:1.4rem;text-shadow:0 2px 18px rgba(0,0,0,.55),0 0 50px rgba(0,0,0,.3)}
     .sailing-h em{font-style:italic;color:var(--lagoon-lt)}
-    .sailing-p{font-size:.97rem;line-height:1.8;color:rgba(253,250,245,.58);max-width:40ch}
+    .sailing-p{font-size:.97rem;line-height:1.8;color:rgba(253,250,245,.78);max-width:40ch;text-shadow:0 1px 12px rgba(0,0,0,.6)}
 
     /* HIGHLIGHTS BAR */
     .highlights{background:var(--ink);padding:3.5rem 0;border-top:1px solid rgba(253,250,245,.04);border-bottom:1px solid rgba(253,250,245,.04)}
@@ -315,6 +316,7 @@
     /* ANIMATIONS */
     @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
     @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+    @keyframes tabIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
     /* HAMBURGER */
     .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem;z-index:300}
@@ -397,6 +399,7 @@
       .act-title{font-size:1.1rem}
       .sailing-body{padding:3rem 1.8rem}
       .sailing-h{font-size:clamp(1.8rem,6vw,2.8rem)}
+      .sailing-bg::after{background:linear-gradient(to top,rgba(8,18,24,.88) 0%,rgba(8,18,24,.55) 38%,rgba(8,18,24,.12) 100%)}
       .people-grid{grid-template-columns:1fr}
       .pp{padding:3rem 1.6rem;border-right:none !important}
       .pp:first-child{border-bottom:1px solid rgba(253,250,245,.06)}
@@ -428,6 +431,8 @@
     @media(max-width:600px){
       .container{padding:0 1.2rem}
       .sp{padding:4rem 0}
+      .rooms-tabs{gap:.4rem;margin-bottom:2rem}
+      .tab-btn{flex:1 1 0;min-width:0;padding:.7rem .35rem;font-size:.58rem;letter-spacing:.06em;text-align:center;line-height:1.25}
       .hero-title{font-size:clamp(3.4rem,18vw,5.5rem)}
       .hero-sub{font-size:.92rem}
       .story-visual{height:auto}
@@ -690,7 +695,7 @@
 
   <!-- SAILING -->
   <section class="sailing" id="sailing">
-    <div class="sailing-bg" style="background-image:url('/images/lagoon-sailboat-green-jungle-banks-aerial.webp')"></div>
+    <div class="sailing-bg" style="background-image:url('/images/sailing-deck-side-rail-turquoise-water-blue-sky-vertical.webp');background-position:center 42%"></div>
     <div class="sailing-body">
       <div class="sailing-txt">
         <span class="label" data-i18n="sailing.label"></span>
@@ -716,7 +721,7 @@
           </div>
         </div>
         <div class="act-card">
-          <img loading="lazy" decoding="async" fetchpriority="low" src="/images/lagoon-sailboat-green-jungle-banks-aerial.webp" alt="Sailing on Laguna de Bacalar"/>
+          <img loading="lazy" decoding="async" fetchpriority="low" src="/images/sailing-bow-man-hood-sail-turquoise-lagoon-wide.webp" alt="Sailing the lagoon from the bow under full sail"/>
           <div class="act-body">
             <span class="act-num">02</span>
             <h3 class="act-title" data-i18n="act2.title"></h3>
@@ -836,7 +841,7 @@
         </div>
         <div class="loc-photos">
           <div class="loc-photo"><img loading="lazy" decoding="async" fetchpriority="low" src="/images/aerial-buenavista-village-lagoon-pin-wider.webp" alt="Buenavista village and Laguna de Bacalar aerial with pin"/ style="object-position:center 40%" ></div>
-          <div class="loc-photo"><img loading="lazy" decoding="async" fetchpriority="low" src="/images/lagoon-sailboat-green-jungle-banks-aerial.webp" alt="Sailing on the lagoon"/></div>
+          <div class="loc-photo"><img loading="lazy" decoding="async" fetchpriority="low" src="/images/laguna-bacalar-dawn-mist-palapas-palms-dock-wide.webp" alt="Laguna de Bacalar at dawn, mist over the water"/></div>
           <div class="loc-photo"><img loading="lazy" decoding="async" fetchpriority="low" src="/images/pool-palapa-dining-terrace-freeform-garden-wide.webp" alt="Pool and dining terrace"/ style="object-position:center 50%" ></div>
         </div>
       </div>
@@ -898,7 +903,7 @@
     <div class="f-mid">
       <span class="f-loc">Buenavista, Quintana Roo · México</span>
       <div class="f-soc">
-        <a href="https://us2.cloudbeds.com/en/reservation/sF5UIe?promo=casacactus10&currency=mxn&utm_source=web&utm_medium=website&utm_content=footer_book" target="_blank" data-i18n="cta.book"></a>
+        <a href="https://us2.cloudbeds.com/en/reservation/sF5UIe?promo=casacactus10&currency=mxn&utm_source=web&utm_medium=website&utm_content=footer_book" target="_blank" data-i18n="footer.book"></a>
         <span style="color:rgba(253,250,245,.12)">·</span>
         <a href="https://www.instagram.com/casacactusbuenavista/" target="_blank">Instagram</a>
         <span style="color:rgba(253,250,245,.12)">·</span>
@@ -1037,6 +1042,7 @@
       'cta.h2':         'If this sounds like<br><em>your kind of place</em>',
       'cta.p':          'Casa Cactus was never meant to be a perfect hotel. It is a place with stories, people, and the quiet beauty of a small village by the lagoon. We would be happy to welcome you.',
       'cta.book':       'Book directly with us',
+      'footer.book':    'Book',
       'cta.booking':    'Book on Booking.com',
       'cta.ig':         'Follow on Instagram',
       'hl.rooms.label':  'Accommodation',
@@ -1153,6 +1159,7 @@
       'cta.h2':         'Si esto suena como<br><em>tu tipo de lugar</em>',
       'cta.p':          'Casa Cactus nunca fue pensado para ser un hotel perfecto. Es un lugar con historias, personas y la belleza tranquila de un pequeño pueblo junto a la laguna. Estaríamos felices de darte la bienvenida.',
       'cta.book':       'Reserva directa con nosotros',
+      'footer.book':    'Reservar',
       'cta.booking':    'Reservar en Booking.com',
       'cta.ig':         'Seguir en Instagram',
       'hl.rooms.label':  'Alojamiento',
@@ -1269,6 +1276,7 @@
       'cta.h2':         'Si cela vous ressemble,<br><em>venez nous rejoindre</em>',
       'cta.p':          'Casa Cactus n\'a jamais voulu être un hôtel parfait. C\'est un endroit avec des histoires, des gens, et la beauté tranquille d\'un petit village au bord de la lagune. Nous serions heureux de vous accueillir.',
       'cta.book':       'Réservez en direct',
+      'footer.book':    'Réserver',
       'cta.booking':    'Réserver sur Booking.com',
       'cta.ig':         'Nous suivre sur Instagram',
       'hl.rooms.label':  'Hébergement',
@@ -1385,6 +1393,7 @@
       'cta.h2':         'Wenn das nach<br><em>Ihrem Ort klingt</em>',
       'cta.p':          'Casa Cactus sollte nie ein perfektes Hotel sein. Es ist ein Ort mit Geschichten, Menschen und der stillen Schönheit eines kleinen Dorfes an der Lagune. Wir würden uns freuen, Sie willkommen zu heißen.',
       'cta.book':       'Direkt bei uns buchen',
+      'footer.book':    'Buchen',
       'cta.booking':    'Auf Booking.com buchen',
       'cta.ig':         'Auf Instagram folgen',
       'hl.rooms.label':  'Unterkunft',
