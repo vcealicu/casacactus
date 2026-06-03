@@ -77,8 +77,8 @@
 <body>
   <header>
     <div class="bar">
-      <a href="index.html" class="logo">Casa Cactus</a>
-      <a href="index.html" class="back" aria-label="Back to home">
+      <a href="/" class="logo">Casa Cactus</a>
+      <a href="/" class="back" aria-label="Back to home">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
         Back
       </a>
@@ -105,7 +105,7 @@
 
   <footer>
     <div class="fl">Casa Cactus</div>
-    <div>Buenavista, near Laguna de Bacalar &middot; <a href="index.html">Home</a></div>
+    <div>Buenavista, near Laguna de Bacalar &middot; <a href="/">Home</a></div>
     <div class="small">Open since 2024</div>
   </footer>
 
@@ -344,8 +344,8 @@
     function closeLb(){ lb.classList.remove("open"); document.body.style.overflow = ""; }
     function step(dir){
       var tiles = currentTiles();
-      var srcs = tiles.map(function(t){ return t.getAttribute("href"); });
-      var i = srcs.indexOf(lbImg.getAttribute("src"));
+      var srcs = tiles.map(function(t){ return t.href; });   // resolved absolute URLs
+      var i = srcs.indexOf(lbImg.src);                        // also resolved absolute
       if(i === -1) return;
       var n = (i + dir + srcs.length) % srcs.length;
       var alt = tiles[n].querySelector("img").alt;

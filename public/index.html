@@ -374,9 +374,8 @@
       .hl-div{display:none}
       .story-grid{grid-template-columns:1fr}
       .story-visual{height:auto}
-      .s-main{position:static;width:100%;height:300px}
-      .s-accent{position:static;width:100%;height:200px;margin-top:1rem}
-      .s-accent-caption{left:0;right:0;width:auto}
+      .s-main{position:static;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;max-height:none}
+      .s-accent,.s-accent-caption{display:none}
       .story-text{padding-right:0}
       .gstrip{grid-template-columns:repeat(3,1fr);height:180px}
       .gstrip-item:nth-child(n+4){display:none}
@@ -432,8 +431,7 @@
       .hero-title{font-size:clamp(3.4rem,18vw,5.5rem)}
       .hero-sub{font-size:.92rem}
       .story-visual{height:auto}
-      .s-main{height:240px}
-      .s-accent{height:170px}
+      .s-main{height:auto}
       .gstrip{height:150px}
       .act-grid{grid-template-columns:1fr;gap:1rem}
       .act-card{height:230px}
@@ -459,7 +457,7 @@
       <li><a href="#sailing" data-i18n="nav.sailing"></a></li>
       <li><a href="#people" data-i18n="nav.people"></a></li>
       <li><a href="#location" data-i18n="nav.location"></a></li>
-      <li><a href="./gallery">Gallery</a></li>
+      <li><a href="/gallery">Gallery</a></li>
       <li>
         <div class="lang-toggle">
           <button class="lang-btn" onclick="setLang('en')">EN</button>
