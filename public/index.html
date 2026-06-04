@@ -619,7 +619,6 @@
             <div class="room-overlay">
               <span class="room-tag" data-i18n="apt.tag"></span>
               <h3 class="room-title" data-i18n="apt.title"></h3>
-              <p class="room-desc" data-i18n="apt.desc"></p>
             </div>
           </div>
           <div class="room-side">
@@ -639,6 +638,7 @@
             </div>
           </div>
         </div>
+        <div class="room-copy" data-i18n="apt.desc"></div>
         <div class="room-features">
           <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12l9-9 9 9M5 10v9a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1v-9"/></svg><span data-i18n="feat.fullapt"></span></div>
           <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v1m0 16v1M4.22 4.22l.7.7m12.16 12.16l.7.7M3 12h1m16 0h1M4.22 19.78l.7-.7M18.36 5.64l.7-.7"/><circle cx="12" cy="12" r="5"/></svg><span data-i18n="feat.ac"></span></div>
@@ -656,7 +656,6 @@
             <div class="room-overlay">
               <span class="room-tag" data-i18n="pool.tag"></span>
               <h3 class="room-title" data-i18n="pool.title"></h3>
-              <p class="room-desc" data-i18n="pool.desc"></p>
             </div>
           </div>
           <div class="room-side">
@@ -676,6 +675,7 @@
             </div>
           </div>
         </div>
+        <div class="room-copy" data-i18n="pool.desc"></div>
         <div class="room-features">
           <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2-4 5-6 10-6s8 2 10 6"/><path d="M2 16c2-4 5-6 10-6s8 2 10 6"/></svg><span data-i18n="feat.pool"></span></div>
           <div class="feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span data-i18n="feat.garden"></span></div>
@@ -835,10 +835,10 @@
           <h2 class="h2" data-i18n="loc.h2"></h2>
           <div class="gold-rule"></div>
           <ul class="dist-list">
-            <li class="dist-item"><span class="dist-place">Laguna de Bacalar</span><span class="dist-detail" data-i18n="loc."></span></li>
-            <li class="dist-item"><span class="dist-place" data-i18n="loc.p2"></span><span class="dist-detail" data-i18n="loc."></span></li>
-            <li class="dist-item"><span class="dist-place" data-i18n="loc.p3"></span><span class="dist-detail" data-i18n="loc."></span></li>
-            <li class="dist-item"><span class="dist-place" data-i18n="loc.p4"></span><span class="dist-detail" data-i18n="loc."></span></li>
+            <li class="dist-item"><span class="dist-place">Laguna de Bacalar</span><span class="dist-detail" data-i18n="loc.d1"></span></li>
+            <li class="dist-item"><span class="dist-place" data-i18n="loc.p2"></span><span class="dist-detail" data-i18n="loc.d2"></span></li>
+            <li class="dist-item"><span class="dist-place" data-i18n="loc.p3"></span><span class="dist-detail" data-i18n="loc.d3"></span></li>
+            <li class="dist-item"><span class="dist-place" data-i18n="loc.p4"></span><span class="dist-detail" data-i18n="loc.d4"></span></li>
             <li class="dist-item"><span class="dist-place" data-i18n="loc.p5"></span><span class="dist-detail" data-i18n="loc.d5"></span></li>
           </ul>
         </div>
@@ -979,14 +979,14 @@
       'bungalow.title3':'Carved Stone Details',
       'apt.tag':        'Furnished Apartment',
       'apt.title':      'The Apartments',
-      'apt.desc':       'Fully equipped kitchens, spacious living areas, work desks, and complete independence for longer stays.',
+      'apt.desc':       'A bright apartment on the first floor with a separate bedroom and living space opening onto a private balcony with outdoor furniture and a hammock overlooking the pool.<br><br>The bedroom has a king-size bed, air conditioning, wardrobe, and private bathroom. The living area has a sofa bed for an extra adult or two children, a full kitchen with stovetop, fridge, coffee machine and everything to cook, plus a small work desk with garden views. Ceiling fan and large glass doors keep it naturally cool. Starlink internet throughout. Accessible by stairs only.',
       'apt.tag2':       'Bedroom',
       'apt.title2':     'Space to Breathe',
       'apt.tag3':       'Kitchen',
       'apt.title3':     'Fully Equipped',
       'pool.tag':       'Shared · Open All Day',
       'pool.title':     'The Pool',
-      'pool.desc':      'A freeform lagoon-shaped pool at the heart of the property — where afternoons dissolve and evenings begin.',
+      'pool.desc':      'A freeform pool surrounded by tropical garden, open all day. Sun loungers on the lawn, string lights at night, and a stone palapa with an outdoor bar and dining tables where breakfast is served every morning.<br><br>On select evenings, dinner is a three-course home-cooked meal — seasonal, made from scratch, eaten here by the pool.<br><br>At the far end of the garden, a wood fire pit with chairs.<br><br><span class="room-copy-em">No agenda. Just fire, sky, and the sounds of Buenavista.</span>',
       'pool.tag2':      'Garden Path',
       'pool.title2':    'String Lights & Red Ginger',
       'pool.tag3':      'Pool Entry',
@@ -1030,13 +1030,13 @@
       'chiku.quote':    'Chiku gives his attention only when he decides it is appropriate. Strangely, this only makes people more determined to be chosen by him. His white friend Mimish from next door visits daily and is considerably more approachable.',
       'loc.label':      'Buenavista & Beyond',
       'loc.h2':         'Close to <em>everything</em>,<br>still peaceful',
-      'loc.':         '7 min walk',
+      'loc.d1':        '5 min walk',
       'loc.p2':         'Chacchoben Mayan Ruins',
-      'loc.':         '10 min drive',
+      'loc.d2':        '15 min drive (20 km)',
       'loc.p3':         'Town of Bacalar',
-      'loc.':         'Short drive',
+      'loc.d3':        '25 min drive (30 km)',
       'loc.p4':         'Mahahual Caribbean Beaches',
-      'loc.':         '50 min drive',
+      'loc.d4':        '60 min drive (80 km)',
       'loc.p5':         'Private Sailing on the Lagoon',
       'loc.d5':         'From your door',
       'ig.label':       'Follow Our Days',
@@ -1096,14 +1096,14 @@
       'bungalow.title3':'Detalles en Piedra Tallada',
       'apt.tag':        'Apartamento Amueblado',
       'apt.title':      'Los Apartamentos',
-      'apt.desc':       'Cocinas totalmente equipadas, amplias salas de estar, escritorios e independencia total para estancias largas.',
+      'apt.desc':       'Un apartamento luminoso en la primera planta, con dormitorio y sala de estar independientes que se abren a un balcón privado con mobiliario de exterior y una hamaca con vistas a la piscina.<br><br>El dormitorio tiene cama king-size, aire acondicionado, armario y baño privado. La sala de estar cuenta con un sofá cama para un adulto más o dos niños, una cocina completa con fogones, nevera, cafetera y todo lo necesario para cocinar, además de un pequeño escritorio con vistas al jardín. El ventilador de techo y las grandes puertas de cristal lo mantienen fresco de forma natural. Internet Starlink en todo el apartamento. Acceso solo por escaleras.',
       'apt.tag2':       'Dormitorio',
       'apt.title2':     'Espacio para Respirar',
       'apt.tag3':       'Cocina',
       'apt.title3':     'Completamente Equipada',
       'pool.tag':       'Compartida · Abierta todo el día',
       'pool.title':     'La Piscina',
-      'pool.desc':      'Una piscina de forma libre en el corazón de la propiedad, donde las tardes se disuelven y comienzan las noches.',
+      'pool.desc':      'Una piscina de forma libre rodeada de jardín tropical, abierta todo el día. Tumbonas sobre el césped, luces colgantes por la noche y una palapa de piedra con bar exterior y mesas donde cada mañana se sirve el desayuno.<br><br>En noches seleccionadas, la cena es una comida casera de tres tiempos — de temporada, hecha desde cero, servida aquí junto a la piscina.<br><br>Al fondo del jardín, una hoguera de leña con sillas.<br><br><span class="room-copy-em">Sin agenda. Solo fuego, cielo y los sonidos de Buenavista.</span>',
       'pool.tag2':      'Sendero del Jardín',
       'pool.title2':    'Luces y Jengibre Rojo',
       'pool.tag3':      'Entrada a la Piscina',
@@ -1147,13 +1147,13 @@
       'chiku.quote':    'Chiku solo da su atención cuando él lo decide. Extrañamente, esto solo hace que la gente esté más decidida a ser elegida por él. Su amigo blanco Mimish del vecino visita a diario y es considerablemente más accesible.',
       'loc.label':      'Buenavista y más allá',
       'loc.h2':         'Cerca de <em>todo</em>,<br>aún tranquilo',
-      'loc.':         '7 min a pie',
+      'loc.d1':        '5 min a pie',
       'loc.p2':         'Ruinas Mayas de Chacchoben',
-      'loc.':         '10 min en coche',
+      'loc.d2':        '15 min en coche (20 km)',
       'loc.p3':         'Pueblo de Bacalar',
-      'loc.':         'Corta distancia',
+      'loc.d3':        '25 min en coche (30 km)',
       'loc.p4':         'Playas del Caribe en Mahahual',
-      'loc.':         '50 min en coche',
+      'loc.d4':        '60 min en coche (80 km)',
       'loc.p5':         'Velero Privado en la Laguna',
       'loc.d5':         'Desde tu puerta',
       'ig.label':       'Síguenos',
@@ -1213,14 +1213,14 @@
       'bungalow.title3':'Détails en Pierre Sculptée',
       'apt.tag':        'Appartement Meublé',
       'apt.title':      'Les Appartements',
-      'apt.desc':       'Cuisines entièrement équipées, grands espaces de vie, bureaux de travail et indépendance totale pour les longs séjours.',
+      'apt.desc':       'Un appartement lumineux au premier étage, avec une chambre et un séjour séparés ouvrant sur un balcon privé doté de mobilier d\'extérieur et d\'un hamac avec vue sur la piscine.<br><br>La chambre dispose d\'un lit king-size, de la climatisation, d\'une penderie et d\'une salle de bain privée. Le séjour comprend un canapé-lit pour un adulte supplémentaire ou deux enfants, une cuisine entièrement équipée avec plaques de cuisson, réfrigérateur, machine à café et tout le nécessaire pour cuisiner, ainsi qu\'un petit bureau avec vue sur le jardin. Un ventilateur de plafond et de grandes portes vitrées le gardent naturellement frais. Internet Starlink partout. Accessible uniquement par les escaliers.',
       'apt.tag2':       'Chambre',
       'apt.title2':     'Un Espace pour Respirer',
       'apt.tag3':       'Cuisine',
       'apt.title3':     'Entièrement Équipée',
       'pool.tag':       'Partagée · Ouverte toute la journée',
       'pool.title':     'La Piscine',
-      'pool.desc':      'Une piscine à forme libre au cœur de la propriété — là où les après-midi se dissolvent et où commencent les soirées.',
+      'pool.desc':      'Une piscine de forme libre entourée d\'un jardin tropical, ouverte toute la journée. Des transats sur la pelouse, des guirlandes lumineuses le soir et une palapa en pierre avec un bar extérieur et des tables où le petit-déjeuner est servi chaque matin.<br><br>Certains soirs, le dîner est un repas maison de trois plats — de saison, préparé à partir de produits bruts, dégusté ici au bord de la piscine.<br><br>Au fond du jardin, un foyer à bois avec des chaises.<br><br><span class="room-copy-em">Aucun programme. Juste le feu, le ciel et les sons de Buenavista.</span>',
       'pool.tag2':      'Allée du Jardin',
       'pool.title2':    'Guirlandes et Gingembre Rouge',
       'pool.tag3':      'Entrée de la Piscine',
@@ -1264,13 +1264,13 @@
       'chiku.quote':    'Chiku n\'accorde son attention que lorsqu\'il le décide. Étrangement, cela ne fait qu\'accroître la détermination des gens à être choisis par lui. Son ami blanc Mimish du voisin rend visite chaque jour et est considérablement plus accessible.',
       'loc.label':      'Buenavista et Alentours',
       'loc.h2':         'Proche de <em>tout</em>,<br>encore paisible',
-      'loc.':         '7 min à pied',
+      'loc.d1':        '5 min à pied',
       'loc.p2':         'Ruines Mayas de Chacchoben',
-      'loc.':         '10 min en voiture',
+      'loc.d2':        '15 min en voiture (20 km)',
       'loc.p3':         'Ville de Bacalar',
-      'loc.':         'Quelques minutes',
+      'loc.d3':        '25 min en voiture (30 km)',
       'loc.p4':         'Plages des Caraïbes à Mahahual',
-      'loc.':         '50 min en voiture',
+      'loc.d4':        '60 min en voiture (80 km)',
       'loc.p5':         'Voile Privée sur la Lagune',
       'loc.d5':         'Depuis votre porte',
       'ig.label':       'Suivez nos jours',
@@ -1330,14 +1330,14 @@
       'bungalow.title3':'Details aus behauenem Stein',
       'apt.tag':        'Möbliertes Apartment',
       'apt.title':      'Die Apartments',
-      'apt.desc':       'Voll ausgestattete Küchen, großzügige Wohnbereiche, Schreibtische und völlige Unabhängigkeit für längere Aufenthalte.',
+      'apt.desc':       'Eine helle Wohnung im ersten Stock mit getrenntem Schlaf- und Wohnbereich, die sich zu einem privaten Balkon mit Außenmöbeln und einer Hängematte mit Blick auf den Pool öffnet.<br><br>Das Schlafzimmer hat ein Kingsize-Bett, Klimaanlage, einen Kleiderschrank und ein eigenes Bad. Der Wohnbereich verfügt über ein Schlafsofa für einen weiteren Erwachsenen oder zwei Kinder, eine voll ausgestattete Küche mit Kochfeld, Kühlschrank, Kaffeemaschine und allem zum Kochen sowie einen kleinen Schreibtisch mit Gartenblick. Ein Deckenventilator und große Glastüren halten sie natürlich kühl. Starlink-Internet überall. Nur über Treppen erreichbar.',
       'apt.tag2':       'Schlafzimmer',
       'apt.title2':     'Raum zum Atmen',
       'apt.tag3':       'Küche',
       'apt.title3':     'Voll ausgestattet',
       'pool.tag':       'Gemeinsam · Den ganzen Tag geöffnet',
       'pool.title':     'Der Pool',
-      'pool.desc':      'Ein frei geformter, lagunenförmiger Pool im Herzen des Anwesens — wo Nachmittage zerfließen und Abende beginnen.',
+      'pool.desc':      'Ein Freiformpool, umgeben von tropischem Garten, den ganzen Tag geöffnet. Sonnenliegen auf dem Rasen, Lichterketten am Abend und eine steinerne Palapa mit Außenbar und Esstischen, an denen jeden Morgen das Frühstück serviert wird.<br><br>An ausgewählten Abenden ist das Abendessen ein hausgemachtes Drei-Gänge-Menü — saisonal, von Grund auf zubereitet, hier am Pool genossen.<br><br>Am hinteren Ende des Gartens eine Feuerstelle aus Holz mit Stühlen.<br><br><span class="room-copy-em">Kein Programm. Nur Feuer, Himmel und die Klänge von Buenavista.</span>',
       'pool.tag2':      'Gartenweg',
       'pool.title2':    'Lichterketten & Roter Ingwer',
       'pool.tag3':      'Pool-Einstieg',
@@ -1381,13 +1381,13 @@
       'chiku.quote':    'Chiku schenkt seine Aufmerksamkeit nur, wenn er es für angebracht hält. Seltsamerweise macht das die Menschen nur entschlossener, von ihm auserwählt zu werden. Sein weißer Freund Mimish von nebenan kommt täglich zu Besuch und ist deutlich umgänglicher.',
       'loc.label':      'Buenavista & Umgebung',
       'loc.h2':         'Nah an <em>allem</em>,<br>und doch friedlich',
-      'loc.':         '7 Gehminuten',
+      'loc.d1':        '5 Gehminuten',
       'loc.p2':         'Maya-Ruinen von Chacchoben',
-      'loc.':         '10 Min. mit dem Auto',
+      'loc.d2':        '15 Min. mit dem Auto (20 km)',
       'loc.p3':         'Stadt Bacalar',
-      'loc.':         'Kurze Fahrt',
+      'loc.d3':        '25 Min. mit dem Auto (30 km)',
       'loc.p4':         'Karibische Strände von Mahahual',
-      'loc.':         '50 Min. mit dem Auto',
+      'loc.d4':        '60 Min. mit dem Auto (80 km)',
       'loc.p5':         'Privates Segeln auf der Lagune',
       'loc.d5':         'Direkt vor der Tür',
       'ig.label':       'Folge unseren Tagen',
